@@ -111,13 +111,17 @@ public class MiniProject {
             nums[i] = sc.nextInt();
         }
 
-        int lastNonZeroFoundAt = 0;
-        for (int i = 0; i < nums.length; i++) {
+        int insertPos = 0; // Con tro giu vi tri de chen so khac 0
+
+        for (int i = 0; i < n; i++) {
             if (nums[i] != 0) {
-                // Hoán vị nums[i] và nums[lastNonZeroFoundAt]
+                // Neu so hien tai khac 0, dua no ve vi tri insertPos
                 int temp = nums[i];
-                nums[i] = nums[lastNonZeroFoundAt];
-                nums[lastNonZeroFoundAt++] = temp;
+                nums[i] = nums[insertPos];
+                nums[insertPos] = temp;
+
+                // Tang vi tri chen cho so tiep theo
+                insertPos++;
             }
         }
 
