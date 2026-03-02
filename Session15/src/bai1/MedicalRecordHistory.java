@@ -17,7 +17,6 @@ public class MedicalRecordHistory {
             System.out.println("Không có chỉnh sửa nào để Undo.");
             return null;
         }
-
         EditAction removed = history.pop();
         System.out.println("Đã Undo: " + removed);
         displayHistory();
@@ -38,7 +37,6 @@ public class MedicalRecordHistory {
 
     public void displayHistory() {
         System.out.println("----- LỊCH SỬ CHỈNH SỬA -----");
-
         if (history.isEmpty()) {
             System.out.println("Chưa có chỉnh sửa nào.");
         } else {
@@ -46,7 +44,5 @@ public class MedicalRecordHistory {
                 System.out.println(history.get(i));
             }
         }
-
-        System.out.println("------------------------------");
     }
 }
